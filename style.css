@@ -57,7 +57,7 @@ nav {
     flex-grow: 1;
     /* Center the contents (the <ul>) inside this wrapper */
     text-align: center;
-    margin-right: 370px;
+    margin-right: 300px;
 }
 
 /* Update the <ul> to remove the old flex behavior */
@@ -206,6 +206,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent !important;
     opacity: 0;
     transform: translateY(-100px); /* Move 100px UP (off-screen above) */
     transition: 
@@ -704,7 +705,7 @@ nav ul li a:hover {
 
 .progress-value {
     float: right;
-    color: #00ffff;
+    color: #fff;
 }
 
 .bar-background {
@@ -1038,7 +1039,7 @@ nav ul li a:hover {
 
 .news-card {
     flex-basis: calc(33.33% - 20px);
-    background-color: #1a1a1a;
+    background-color: transparent;
     border: 1px solid #333;
     border-radius: 4px;
     overflow: hidden;
@@ -1244,3 +1245,203 @@ nav ul li a:hover {
         display: flex;
     }
 }
+
+/* --- New Responsive Adjustments (Start) --- */
+
+/* Medium Screens (e.g., Tablets, Desktops below 1200px) */
+@media (max-width: 1200px) {
+    /* Adjust overall padding for sections */
+    .home {
+        padding: 0 5%;
+    }
+    .it-partner-section,
+    .services-section,
+    .latest-news-section,
+    .main-footer {
+        padding: 50px 5%;
+    }
+
+    /* Adjust Navigation elements for better fit */
+    .logo {
+        width: 300px; /* Reduce logo area width */
+        margin-left: 20px;
+    }
+    .logo-image {
+        width: 150px;
+        height: 150px;
+    }
+    .nav-placeholder {
+        width: 50px; /* Reduce placeholder width */
+    }
+    .nav-links-wrapper {
+        margin-right: 150px; /* Reduce center margin */
+    }
+    nav ul li {
+        margin: 0 10px; /* Tighten link spacing */
+    }
+
+    /* Adjust main content font sizes */
+    .name-changer {
+        font-size: 45px;
+    }
+    .names {
+        font-size: 45px;
+    }
+    .home-img .img-box {
+        width: 25vw; /* Slightly larger image */
+        height: 25vw;
+        max-width: 350px;
+        max-height: 350px;
+    }
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .typing-title {
+        font-size: 24px;
+    }
+    .role-title h1 {
+        font-size: 24px;
+    }
+}
+
+/* Small Screens (e.g., Mobile Phones, up to 768px) */
+@media (max-width: 768px) {
+    /* 1. Navigation Restructure (Logo, Links, Placeholder) */
+    nav {
+        /* Change to vertical layout and center all items */
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .logo {
+        /* Logo should take full width and center its content */
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+        margin-top: 0;
+    }
+    .logo-image {
+        width: 100px; /* Smaller image on mobile */
+        height: 100px;
+    }
+
+    .nav-placeholder {
+        /* Hide the placeholder since the flex layout is gone */
+        display: none;
+    }
+
+    .nav-links-wrapper {
+        /* Links wrapper should take full width and center its content */
+        flex-grow: 0;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-top: 15px; /* Space between logo and links */
+    }
+
+    nav ul li {
+        margin: 0 8px; /* Further tighten link spacing */
+    }
+
+    /* 2. Home Section Restructure (Three Columns to Stacked) */
+    .home {
+        /* Stack the columns vertically */
+        flex-direction: column;
+        /* Increase padding top/bottom to look better when stacked */
+        padding: 50px 5%;
+        min-height: auto; /* Allow height to collapse to content */
+    }
+
+    .left-content,
+    .home-img,
+    .right-content {
+        /* All items take full width and space themselves out */
+        flex-basis: 100%;
+        text-align: center; /* Center content in the left and right blocks */
+        margin-bottom: 40px; /* Space between stacked blocks */
+    }
+
+    /* Center text within the new full-width blocks */
+    .left-content .greeting,
+    .left-content .name-changer,
+    .left-content .underline,
+    .left-content .names-container,
+    .left-content .contact-button {
+        text-align: center;
+        /* Re-center the underline */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Center the socials row */
+    .socials {
+        justify-content: center;
+    }
+    
+    /* Center the Right Content block text */
+    .right-content {
+        text-align: center;
+    }
+    .typing-title {
+        /* Ensure typing title is centered or takes up available width */
+        justify-content: center;
+    }
+    .right-content .description {
+        text-align: center;
+    }
+    .page-links {
+        /* Center the page links */
+        justify-content: center;
+    }
+
+    /* Smaller image in the center block */
+    .home-img .img-box {
+        width: 60vw;
+        height: 60vw;
+        max-width: 300px;
+        max-height: 300px;
+        margin-top: 0; /* Remove extra margin */
+    }
+
+    /* 3. Further Services Restructure */
+    .service-cards-grid {
+        /* Stack service cards vertically on small mobile */
+        flex-direction: column;
+    }
+    .service-card {
+        flex-basis: 100%; /* Each card takes full width */
+    }
+
+    /* 4. Footer Column Centering */
+    .footer-col.contact-col p {
+        justify-content: center; /* Center the icons/text */
+    }
+}
+
+/* Very Small Mobile Screens (e.g., iPhone SE, up to 480px) */
+@media (max-width: 480px) {
+    /* Reduce font sizes aggressively */
+    .name-changer, .names {
+        font-size: 35px;
+    }
+    .greeting, nav ul li a, .contact-button, .socials a {
+        font-size: 12px;
+    }
+    .main-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Navigation: Stack links too, if too wide */
+    nav ul {
+        display: block; /* Make the ul a block element */
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li {
+        display: block; /* Stack links vertically */
+        margin: 5px 0;
+    }
+}
+/* --- New Responsive Adjustments (End) --- */

@@ -569,3 +569,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links-wrapper');
+    navLinks.classList.toggle('active');
+}
