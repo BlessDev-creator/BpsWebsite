@@ -787,7 +787,7 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover; /* Ensures the image covers the container */
     /* Add any filter or blend modes here to get the dark/cyan effect */
-    filter: brightness(0.7) hue-rotate(180deg);
+    
 }
 
 /* --- Optional: Responsive adjustment for mobile --- */
@@ -925,9 +925,8 @@ nav ul li a:hover {
     /* Styles to make logos fit and appear grayscale/filtered */
     max-width: 100%;
     height: auto;
-    opacity: 0.6; 
+    opacity: 1; 
     /* Dim the logos */
-    filter: grayscale(100%);
     transition: opacity 0.3s;
 }
 
